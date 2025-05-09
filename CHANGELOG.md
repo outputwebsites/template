@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.1
+### Patch changes
+ - Astro has been upgraded to v.5.7.12
+ - Fixed Picture import statement. Newer versions of Astro must import `<Image />` and `<Picture />` from "astro:assets"
+
+ ```diff
+- import Picture from "astro/components/Picture.astro"
++ import { Picture } from "astro:assets"
+```
+
 ## 2.1.0
 
 ### Major changes
