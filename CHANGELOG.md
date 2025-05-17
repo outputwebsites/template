@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.3
+
+### Minor changes
+
+- The `tags` array of strings in the blog config is now a `isFeatured` boolean.
+
 ## 2.2.2
 
 ### Minor changes
@@ -135,12 +141,12 @@ The blog has received new components and some refactoring.
 
 4.  **Breaking change: TypeScript configuration**
     <br> 📢 Reference: https://docs.astro.build/en/guides/upgrade-to/v5/#changed-typescript-configuration 1. Add the following `include` and `exclude` properties to your existing `tsconfig.json`:
-        ```
-        {
-          "extends": "astro/tsconfigs/base",
-          "include": [".astro/types.d.ts", "**/*"],
-          "exclude": ["dist"]
-        }
+    ```
+    {
+    "extends": "astro/tsconfigs/base",
+    "include": [".astro/types.d.ts", "**/*"],
+    "exclude": ["dist"]
+    }
 
         ```
 
