@@ -21,7 +21,6 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 # Add site link in DecapCMS (optional)
 site_url: https://intermediate-astro-kit-decap-cms.netlify.app
 
-local_backend: true
 media_folder: src/assets/images/blog # Location where files will be stored in the repo - we store them in src so that Astro can optimize them.
 public_folder: src/assets/images/blog # Ensure that this path is the same as the media_folder path above.
 

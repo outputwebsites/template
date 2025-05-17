@@ -54,7 +54,7 @@ vanilla component library</a>. This kit aims to get any project off the ground i
 2. Follow the instructions to create a new repository, using this repo as a template.
 3. When created, clone the repository to your local machine.
 4. Run `npm install` to install all dependencies.
-5. Run `npm run dev` to start the project and spin up a development server on `localhost:4321` and a Decap admin server. Access the admin dashboard at the `/admin` path.
+5. Run `npm run dev` to start the project and spin up a development server on `localhost:4321`
 
 Next, it is recommended to update `data/client.json` with some new information about this project. Through the power of templating, the
 project's `<head>` and contact information will automatically be filled out, providing a first peek into some of the benefits of SSGs.
@@ -550,7 +550,7 @@ Blog content lives in `/src/content/blog` in the form of markdown files, with a 
 
 Files uploaded through the dashboard's media library will be stored in `src/assets/images/blog` so that they can be accessed and optimised by Astro components if you wish.
 
-When `npm run dev` is run, a proxy server for the CMS is spun up on `localhost:8081`. That can often mean you run into errors if `localhost:8080` is already taken, so look out for that. You can locally access the blog via navigating to the `/admin` path (e.g. `http://localhost:4321/admin`). While running the local dev server, you won't need to login to access the admin dashboard. All blog content can be easily created, updated and deleted via this admin panel, and is the very system that your clients can use to manage their website without your involvement.
+You can access the blog via navigating to the `/admin` path on the deployed site and entering your decapbridge admin credentials. All blog content can be easily created, updated and deleted via this admin panel, and is the very system that your clients can use to manage their website without your involvement.
 
 Everything on the blog should be fairly intuitive, but feel free to experiment with using this panel first. With this kit, you can add _featured_ to the comma-separated list of tags to have them show up as so in the frontend.
 
