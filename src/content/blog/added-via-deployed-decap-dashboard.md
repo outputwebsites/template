@@ -5,8 +5,7 @@ author: Geoffrey
 date: 2025-05-17T16:10:00.000Z
 image: src/assets/images/blog/blog-cover.jpg
 imageAlt: This post was added via deployed Decap dashboard
-tags:
-  - post
+isFeatured: true
 ---
 
 Netlify Identity has been removed, and the kit now uses decapbridge.com. Why?

@@ -5,7 +5,7 @@ import { formatDate } from "@js/utils";
 import "@styles/sidebar.less";
 
 const posts = await getCollection("blog");
-const featuredPosts = posts.filter((post) => post.data.tags.includes("featured"));
+const featuredPosts = posts.filter((post) => post.data.isFeatured === true);
 ---
 
 <h3 class="blog-sidebar_widget-header">Featured Posts</h3>
