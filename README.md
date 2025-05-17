@@ -648,7 +648,7 @@ Fore more configuration options, read the [full Astro Sitemap documentation](htt
 >
 > 1. Login to your Netlify account
 > 2. Navigate to Projects/Your-Site
-> 3. Navigate to Project Configuration/Identity and delete the Netlify Identity instance.
+> 3. Navigate to Project Configuration/Identity and delete the Netlify Identity instance. This will delete your users as well. They will have to be re-created in decapbridge later.
 > 4. In /src/pages/admin.astro, delete the Netlify Identity script
 
 ### On decapbridge.com:
@@ -713,6 +713,7 @@ site_url: https://testing-decapbridge.netlify.app
 ```
 
 2. Push changes to the repo and test the authentication system. As the admin of the site, your login credentials to access the Decap dashboard are the same as your decapbridge.com credentials.
+3. Invite your client from your decapbridge dashboard. This will create a decapbridge collaborator account for them. From there, they will be able to access their Decap dashboard, reset their password etc.
 
 <a name="acknowledgments"></a>
 
