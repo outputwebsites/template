@@ -28,6 +28,7 @@
   - [Built-in Astro components](#builtinastrocomponents)
   - [Custom Picture component](#Custompicturecomponent)
   - [Configuring the CMS](#configuringTheCms)
+  - [Adding local backend](#addingLocalBackend)
   - [Astro Content Collections](#AstroContentCollections)
   - [Preloading images](#preloadingimages)
   - [Sitemap Configuration](#sitemapConfiguration)
@@ -553,6 +554,36 @@ Files uploaded through the dashboard's media library will be stored in `src/asse
 You can access the blog via navigating to the `/admin` path on the deployed site and entering your decapbridge admin credentials. All blog content can be easily created, updated and deleted via this admin panel, and is the very system that your clients can use to manage their website without your involvement.
 
 Everything on the blog should be fairly intuitive, but feel free to experiment with using this panel first. With this kit, you can add _featured_ to the comma-separated list of tags to have them show up as so in the frontend.
+
+#### Adding local backend
+
+If you want to be able to access the Decap dashboard in order to make content changes, you need to enable some local backend settings.
+
+1. in `public/admin/config.yml`
+   Add the local_backend setting
+
+```diff
++ local_backend: true
+```
+
+2. in `package.json`
+   We need to be able to run a local decap server in parallel to our astro dev. In order to do so, we need to:
+
+a. install some packages and update the scripts. Run:
+`npm install npm-run-all --save-dev`
+`npm install decap-server`
+
+b. update the scripts
+
+```diff
+"scripts": {
+"astro": "astro dev",
++ "decap": "npx decap-server",
++ "dev": "npm-run-all --parallel astro decap",
+},
+```
+
+Now, when `npm run dev` is run, a proxy server for the CMS is spun up on `localhost:8081`. That can often mean you run into errors if `localhost:8080` is already taken, so look out for that. You can locally access the blog via navigating to the `/admin` path (e.g. `http://localhost:4321/admin`). While running the local dev server, you won't need to login to access the admin dashboard.
 
 <a name="astroContentCollections"></a>
 
