@@ -28,7 +28,6 @@
   - [Built-in Astro components](#builtinastrocomponents)
   - [Custom Picture component](#Custompicturecomponent)
   - [Configuring the CMS](#configuringTheCms)
-  - [Adding local backend](#addingLocalBackend)
   - [Astro Content Collections](#AstroContentCollections)
   - [Preloading images](#preloadingimages)
   - [Sitemap Configuration](#sitemapConfiguration)
