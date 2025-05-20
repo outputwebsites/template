@@ -753,6 +753,7 @@ The author would like to acknowledge:
 
 - [Cedar Studios](https://github.com/cedar-studios) - Their [Intermediate-Astro-Kit-LESS](https://github.com/cedar-studios/Intermediate-Astro-Kit-LESS/tree/master) is the base of this template, which aims to improve on a few issues such as a breaking update to Astro v.4 due to outdated `astro-netlify-cms` integration.
 - [CodeStitch](https://codestitch.app/) - Some of their free stitches were used in this template.
+- [Decapbridge.com] - Powers the interactions between Decap and the Github repo. Visit [Decapbridge Discord]((https://discord.com/channels/1257728522361901219/1257728681380417600)) and their [open-sources repos](https://github.com/decapbridge) for more information and support.
 
 <a name="Conclusion"></a>
 
