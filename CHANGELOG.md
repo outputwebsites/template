@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.2.4
+
+### Minor changes
+
+- Added support for custom styles for the Decap CMS preview pane, so that blog posts in the admin dashboard look similar to the live site.
+  Thanks @JerHawden for the great work. More info in [PR23](https://github.com/CodeStitchOfficial/Intermediate-Astro-Decap-CMS/pull/23)
+
+See code changes in [47df1c0](4b8f13c743624211118f081d6c6b566f0b8331ee)
+See documentation changes in [47df1c0](47df1c02599710c9b669f869166e64633eb0c5d8)
+
 ## 2.2.3
 
 ### Minor changes
@@ -141,7 +151,8 @@ The blog has received new components and some refactoring.
 
 4.  **Breaking change: TypeScript configuration**
     <br> 📢 Reference: https://docs.astro.build/en/guides/upgrade-to/v5/#changed-typescript-configuration 1. Add the following `include` and `exclude` properties to your existing `tsconfig.json`:
-    ```
+
+    ````
     {
     "extends": "astro/tsconfigs/base",
     "include": [".astro/types.d.ts", "**/*"],
@@ -149,6 +160,7 @@ The blog has received new components and some refactoring.
     }
 
         ```
+    ````
 
 - Ensure that the other packages you may have added are up-to-date and compatible with Astro v5
 - Please refer to the [official Upgrade to v5 guide](https://docs.astro.build/en/guides/upgrade-to/v5/) if you run into any issues.
