@@ -28,6 +28,7 @@
   - [Built-in Astro components](#builtinastrocomponents)
   - [Custom Picture component](#Custompicturecomponent)
   - [Configuring the CMS](#configuringTheCms)
+  - [Styling Decap preview pane](#stylingdecappreview)
   - [Astro Content Collections](#AstroContentCollections)
   - [Preloading images](#preloadingimages)
   - [Sitemap Configuration](#sitemapConfiguration)
@@ -554,6 +555,30 @@ You can access the blog via navigating to the `/admin` path on the deployed site
 
 Everything on the blog should be fairly intuitive, but feel free to experiment with using this panel first. With this kit, you can add _featured_ to the comma-separated list of tags to have them show up as so in the frontend.
 
+<a name="configuringTheCms"></a>
+
+### Styling the Decap preview pane
+
+This template includes custom styles for the Decap CMS preview pane, so that blog posts in the admin dashboard look similar to the live site.
+
+**How it works:**
+
+- The preview styles are defined in `public/admin/decap-preview-styles.css`.
+- The CMS preview script in `src/pages/admin.astro`:
+  - pulls the props from the collection
+  - creates the DOM elements
+  - registers these elements and styles for the preview panel to use
+
+**How to update or customize:**
+
+- Edit `public/admin/decap-preview-styles.css` and the preview pane script in `src/pages/admin.astro` to match your site's branding or layout changes.
+- Use Decap's documentation on [customizing the preview pane](https://decapcms.org/docs/customization/)
+
+**Notes**
+
+- The style sheet must be a CSS file
+- The style sheet does not support nested CSS.
+
 #### Adding local backend
 
 If you want to be able to access the Decap dashboard in order to make content changes, you need to enable some local backend settings.
@@ -753,7 +778,7 @@ The author would like to acknowledge:
 
 - [Cedar Studios](https://github.com/cedar-studios) - Their [Intermediate-Astro-Kit-LESS](https://github.com/cedar-studios/Intermediate-Astro-Kit-LESS/tree/master) is the base of this template, which aims to improve on a few issues such as a breaking update to Astro v.4 due to outdated `astro-netlify-cms` integration.
 - [CodeStitch](https://codestitch.app/) - Some of their free stitches were used in this template.
-- [Decapbridge.com] - Powers the interactions between Decap and the Github repo. Visit [Decapbridge Discord]((https://discord.com/channels/1257728522361901219/1257728681380417600)) and their [open-sources repos](https://github.com/decapbridge) for more information and support.
+- [Decapbridge.com] - Powers the interactions between Decap and the Github repo. Visit [Decapbridge Discord](<(https://discord.com/channels/1257728522361901219/1257728681380417600)>) and their [open-sources repos](https://github.com/decapbridge) for more information and support.
 
 <a name="Conclusion"></a>
 
