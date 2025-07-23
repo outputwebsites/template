@@ -41,10 +41,10 @@
 ## Overview
 
 This intermediate kit includes a pre-configured <a href="https://www.astro.build">Astro</a> environment, which
-allows for repeated components, centralized data and greater room to scale as your clients grow. The kit runs the latest major Astro version, v4. On top of this, a blog has been provided through [Decap CMS](https://decapcms.org/) to allow your clients to manage their content on their own. This can easily be adapted to anything which requires changing content, such as menus, job listing boards, portfolios and much more.
+allows for repeated components, centralized data and greater room to scale as your clients grow. The kit runs the latest major Astro version, v5. On top of this, a blog has been provided through [Decap CMS](https://decapcms.org/) to allow your clients to manage their content on their own. This can easily be adapted to anything which requires changing content, such as menus, job listing boards, portfolios and much more.
 
 An example website has also been provided, with easy substitution of website sections possible through the use of <a href="https://codestitch.app/">CodeStitch's
-vanilla component library</a>. This kit aims to get any project off the ground in as little time as possible, with deployment being possible in as little as two minutes. We recommend Netlify as a host to take advantage of Netlify Identity and client authentication to the CMS dashboard.
+vanilla component library</a>. This kit aims to get any project off the ground in as little time as possible, with deployment being possible in as little as two minutes. We recommend Netlify as a host.
 
 <a name="gettingStarted"></a>
 
@@ -77,7 +77,7 @@ Only the vanilla web technologies are _required_ before using this kit, with som
 ## Features
 
 - Runs on Astro v5
-- Decap CMS integration with a blog ready to go. Give access to your client via Netlify Identity to allow them to write blog posts. Their edits will be pushed to the repository, triggering a re-build automatically.
+- Decap CMS integration with a blog ready to go. Give access to your client to allow them to write blog posts. Their edits will be pushed to the repository, triggering a re-build automatically.
 - Astro's View Transitions integration
 - Components, props and scoped styles, as demonstrated in `/src/components/Landing.astro` for example
 - Astro's built-in components such as `<Picture />`, as demonstrated in `/src/components/Landing.astro` for example
