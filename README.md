@@ -2,9 +2,6 @@
 
 **Template for new websites by Output Websites - Output Websites builds fully-custom websites tailored to the unique needs of small and local businesses.**
 
-_(This repository contains a Starter Website which is the template for new websites by Output Websites.)_
-_[Website, Web Design]_
-
 **Made Using:** [Astro v5](https://astro.build), [Decap CMS](https://decapcms.org), [DecapBridge](https://decapbridge.com), [Netlify](https://netlify.com)
 
 ---
@@ -27,6 +24,7 @@ _[Website, Web Design]_
 Use of [the code for the Output Template](https://github.com/outputwebsites/template) is licensed under the [MIT License](https://mit.edu/~amini/LICENSE.md). Use of [the code for Intermediate Astro Decap CMS](https://github.com/CodeStitchOfficial/Intermediate-Astro-Decap-CMS) is licensed under the [Creative Commons Zero v1.0 Universal license](https://creativecommons.org/publicdomain/zero/1.0).
 
 This kit is forked from [Intermediate Astro Decap CMS](https://github.com/CodeStitchOfficial/Intermediate-Astro-Decap-CMS) which is forked from [CodeStitch Intermediate-Website-Kit-LESS](https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-LESS).
+Below is the README from [Intermediate Astro Decap CMS](https://github.com/CodeStitchOfficial/Intermediate-Astro-Decap-CMS).
 
 ---
 

@@ -2,7 +2,6 @@
 /**
  * * This custom layout displays blog posts and a sidebar
  **/
-import FeaturedPost from "@components/FeaturedPost.astro";
 import Post from "@components/Post.astro";
 
 const { posts } = Astro.props;
@@ -38,11 +37,6 @@ interface Post {
 				))
 		}
 	</section>
-	<aside class="blog-sidebar">
-		<div class="blog-sidebar_widget-wrapper">
-			<FeaturedPost />
-		</div>
-	</aside>
 </section>
 
 <style lang="less">

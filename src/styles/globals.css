@@ -1,0 +1,221 @@
+@import 'tailwindcss';
+
+@theme {
+    --font-sans:
+        Outfit Variable, ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
+}
+
+@utility button {
+    @apply inline-flex justify-center items-center gap-2 disabled:opacity-50 px-4 py-2 rounded-md focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 [&_svg]:size-4 font-medium text-sm whitespace-nowrap hover:scale-105 transition-transform [&_svg]:pointer-events-none disabled:pointer-events-none [&_svg]:shrink-0 transform;
+}
+
+@utility button-outline {
+    @apply bg-black hover:bg-slate-600 border border-white hover:text-white;
+}
+
+@utility outfit {
+    /* Custom Font */
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+
+    @supports (font-variation-settings: normal) {
+        font-family: 'Outfit Variable', sans-serif;
+        font-weight: 400;
+        font-variation-settings:
+            'wdth' 75,
+            'wght' 500;
+    }
+}
+
+@utility text-balance {
+    text-wrap: balance;
+}
+
+@layer base {
+
+    /* For the base HTML and body tags: set padding/margin, font, etc */
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: "Outfit Variable", system-ui, sans-serif;
+        letter-spacing: 0.2px;
+        scroll-behavior: smooth;
+    }
+
+    /* Change selection background */
+    ::selection {
+        @apply bg-[#A3E635] text-[#F8FAFC];
+        text-shadow: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply mx-0;
+    }
+
+    h1 {
+        @apply text-4xl sm:text-5xl;
+    }
+
+    h2 {
+        @apply text-3xl sm:text-4xl;
+    }
+
+    h3 {
+        @apply text-2xl sm:text-3xl;
+    }
+
+    h4 {
+        @apply text-xl sm:text-2xl;
+    }
+
+    h5 {
+        @apply text-lg sm:text-xl;
+    }
+
+    h6 {
+        @apply text-lg;
+    }
+
+    /* Increase paragraph tag size default to tailwind-xl */
+    p {
+        font-size: 1.25rem;
+        /* 20px - xl */
+        line-height: 1.75rem;
+        /* 20px - xl */
+    }
+
+    /* Link Tags */
+    a {
+        @apply text-[#84CC16];
+        text-decoration: underline;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 100ms;
+    }
+
+    a:hover {
+        @apply text-[#84CC16];
+        text-decoration: none;
+    }
+
+    a:focus {
+        @apply text-[#65A30D];
+        text-decoration: underline;
+    }
+
+    a:active {
+        @apply text-[#65A30D];
+        text-decoration: underline;
+    }
+
+    /* Images */
+    img {
+        @apply flex justify-center items-center bg-black/10 overflow-hidden text-gray-400/20 text-center text-sm align-middle;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Lists */
+    li {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+
+    ol {
+        list-style-type: decimal;
+        list-style-position: inside;
+        counter-reset: item;
+    }
+
+    ul ul,
+    ol ul {
+        list-style-type: circle;
+        list-style-position: inside;
+        margin-left: 1rem;
+        /* 16px */
+    }
+
+    ol ol,
+    ul ol {
+        list-style-type: lower-latin;
+        list-style-position: inside;
+        margin-left: 1rem;
+        /* 16px */
+    }
+
+    li>p,
+    li>h1,
+    li>h2,
+    li>h3,
+    li>h4,
+    li>h5,
+    li>h6 {
+        display: inline-block;
+    }
+
+    ol>li {
+        counter-increment: item;
+    }
+
+    ol ol>li {
+        display: block;
+    }
+
+    ol ol>li:before {
+        content: counters(item, ".") " ";
+    }
+
+    /* Abbreviations */
+    abbr {
+        text-decoration: underline dotted;
+        cursor: help;
+    }
+    abbr:hover {
+        text-decoration: underline;
+    }
+    dfn>abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
+}
+
+/* Skip Link */
+@media only screen and (min-width: 0em) {
+    .skip {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1111111;
+    }
+}
