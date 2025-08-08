@@ -6,6 +6,7 @@
 
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0em) {
+
 	// Website colors
 	:root {
 		--primary: hsl(80, 90%, 55%);
@@ -77,6 +78,7 @@
 
 		&:hover {
 			color: #fff;
+
 			&:before {
 				width: 100%;
 			}
@@ -113,8 +115,11 @@
 		src:
 			local(""),
 			url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"),
-			/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			/* Chrome 26+, Opera 23+, Firefox 39+ */
+			url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff");
+		/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 	}
+
 	/* roboto-700 - latin */
 	@font-face {
 		font-style: normal;
@@ -124,8 +129,11 @@
 		src:
 			local(""),
 			url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"),
-			/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			/* Chrome 26+, Opera 23+, Firefox 39+ */
+			url("/assets/fonts/roboto-v29-latin-700.woff") format("woff");
+		/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 	}
+
 	/* roboto-900 - latin */
 	@font-face {
 		font-style: normal;
@@ -135,7 +143,9 @@
 		src:
 			local(""),
 			url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"),
-			/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			/* Chrome 26+, Opera 23+, Firefox 39+ */
+			url("/assets/fonts/roboto-v29-latin-900.woff") format("woff");
+		/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 	}
 
 	body,
@@ -207,6 +217,7 @@
 
 /* Reset Margins */
 @media only screen and (min-width: 1024px) {
+
 	body,
 	html {
 		margin: 0;
@@ -216,6 +227,7 @@
 
 /* Scale full website with the viewport width */
 @media only screen and (min-width: 2000px) {
+
 	body,
 	html {
 		font-size: 0.85vw;
@@ -315,6 +327,7 @@
 		display: block;
 	}
 }
+
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
 	.cs-hide-on-mobile {

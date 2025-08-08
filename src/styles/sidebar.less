@@ -14,6 +14,7 @@
 		align-items: center;
 		row-gap: (50/16em);
 	}
+
 	.blog-sidebar_widget-wrapper {
 		width: 100%;
 		padding: (20/16em) (16/16em);
@@ -106,17 +107,18 @@
 	.blog-sidebar {
 		max-width: (360/16em);
 		position: sticky;
-		top: 10rem; /* magic number to align with the header */
+		top: 10rem;
+		/* magic number to align with the header */
 	}
 
-    .blog-sidebar_widget-wrapper {
+	.blog-sidebar_widget-wrapper {
 		padding: (35/16em) (30/16em);
 		margin-bottom: 0;
 	}
 
-    .blog-sidebar_widget-header {
-        margin-bottom: (30/16rem);
-    }
+	.blog-sidebar_widget-header {
+		margin-bottom: (30/16rem);
+	}
 }
 
 /* Dark Mode */
@@ -124,7 +126,7 @@
 	body.dark-mode {
 		.blog-sidebar_widget-header {
 			color: var(--bodyTextColorWhite);
-	
+
 			&:after {
 				background: var(--primary);
 			}
@@ -136,6 +138,3 @@
 		}
 	}
 }
-
-
-

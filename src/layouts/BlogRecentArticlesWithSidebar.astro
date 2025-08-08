@@ -3,10 +3,21 @@
  * * This custom layout displays blog posts and a sidebar
  **/
 import FeaturedPost from "@components/FeaturedPost.astro";
-import { formatDate } from "@js/utils";
-import { Picture } from "astro:assets";
+import Post from "@components/Post.astro";
 
 const { posts } = Astro.props;
+
+interface Post {
+	id: string;
+	data: {
+		image: string;
+		imageAlt: string;
+		author: string;
+		date: string | Date;
+		title: string;
+		description: string;
+	};
+}
 ---
 
 <section class="blog-container">
@@ -14,37 +25,16 @@ const { posts } = Astro.props;
 		{posts.length === 0 && <h1>No Recent Posts</h1>}
 		{
 			posts.length >= 1 &&
-				posts.map((post) => (
-					<article class="recent-articles">
-						<Picture
-							pictureAttributes={{
-								class: "blog-mainImage",
-							}}
-							src={post.data.image}
-							quality={"mid"}
-							formats={["avif", "webp", "jpg"]}
-							alt={post.data.imageAlt}
-							loading="lazy"
-							decoding="async"
-							aria-hidden="true"
-						/>
-
-						<div class="blog-header">
-							<div class="blog-authorGroup">
-								<picture class="blog-author-img">
-									<img src="/assets/svgs/profile.svg" alt="house" width="32" height="32" decoding="async" />
-								</picture>
-								<span class="blog-author">{post.data.author}</span>
-								<span aria-hidden="true" class="blog-dot" />
-								<span class="blog-date">{formatDate(post.data.date)}</span>
-							</div>
-							<h2 class="blog-h1">{post.data.title}</h2>
-							<p class="blog-desc">{post.data.description}</p>
-							<a href={post.id} class="blog-link">
-								Continue Reading
-							</a>
-						</div>
-					</article>
+				posts.map((post: Post) => (
+					<Post
+						postImage={post.data.image}
+						postImageAlt={post.data.imageAlt}
+						postAuthor={post.data.author}
+						postDate={post.data.date}
+						postTitle={post.data.title}
+						postDesc={post.data.description}
+						postId={post.id}
+					/>
 				))
 		}
 	</section>

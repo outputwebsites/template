@@ -1,0 +1,43 @@
+---
+import { formatDate } from "@js/utils";
+import { Picture } from "astro:assets";
+const { postImage, postImageAlt, postDate, postTitle, postDesc, postId } =
+    Astro.props;
+---
+
+<article class="article">
+    <Picture
+        pictureAttributes={{
+            class: "cs-picture",
+        }}
+        src={postImage}
+        quality={"mid"}
+        formats={["avif", "webp", "jpg"]}
+        alt={postImageAlt}
+        loading="lazy"
+        decoding="async"
+        aria-hidden="true"
+    />
+    <div class="cs-flex">
+        <span class="cs-date">
+            {formatDate(postDate)}
+        </span>
+        <h3 class="cs-h3">{postTitle}</h3>
+        <p class="cs-item-text">
+            {postDesc}
+        </p>
+        <a href={postId} class="cs-link">
+            Read More
+            <img
+                class="cs-arrow"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/event-chevron.svg"
+                alt="icon"
+                width="20"
+                height="20"
+                aria-hidden="true"
+            />
+        </a>
+    </div>
+</article>

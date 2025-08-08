@@ -1,0 +1,52 @@
+---
+import { formatDate } from "@js/utils";
+import { Picture } from "astro:assets";
+const {
+    postImage,
+    postImageAlt,
+    postAuthor,
+    postDate,
+    postTitle,
+    postDesc,
+    postId,
+} = Astro.props;
+---
+
+<article class="article">
+    <Picture
+        pictureAttributes={{
+            class: "blog-mainImage",
+        }}
+        src={postImage}
+        quality={"mid"}
+        formats={["avif", "webp", "jpg"]}
+        alt={postImageAlt}
+        loading="lazy"
+        decoding="async"
+        aria-hidden="true"
+    />
+
+    <div class="blog-header">
+        <div class="blog-authorGroup">
+            <picture class="blog-author-img">
+                <img
+                    src="/assets/svgs/profile.svg"
+                    alt="house"
+                    width="32"
+                    height="32"
+                    decoding="async"
+                />
+            </picture>
+            <span class="blog-author">
+                {postAuthor}
+            </span>
+            <span aria-hidden="true" class="blog-dot"></span>
+            <span class="blog-date">
+                {formatDate(postDate)}
+            </span>
+        </div>
+        <h2 class="blog-h1">{postTitle}</h2>
+        <p class="blog-desc">{postDesc}</p>
+        <a href={postId} class="blog-link"> Continue Reading </a>
+    </div>
+</article>

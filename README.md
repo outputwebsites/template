@@ -1,3 +1,35 @@
+# Output Template
+
+**Template for new websites by Output Websites - Output Websites builds fully-custom websites tailored to the unique needs of small and local businesses.**
+
+_(This repository contains a Starter Website which is the template for new websites by Output Websites.)_
+_[Website, Web Design]_
+
+**Made Using:** [Astro v5](https://astro.build), [Decap CMS](https://decapcms.org), [DecapBridge](https://decapbridge.com), [Netlify](https://netlify.com)
+
+---
+
+## Links
+
+* **Output Template Website:** [outputtemplate.netlify.app](https://outputtemplate.netlify.app)
+* **Output Template GitHub:** [github.com/outputwebsites/template](https://github.com/outputwebsites/template)
+* **Output Websites Website:** [OutputWebsites.com](https://OutputWebsites.com)
+* **Website By:** [Derek Perry - derek-perry.com](https://derek-perry.com)
+
+---
+
+## Copyright/License Information
+
+**Copyright © 2024-2025 [Output Websites LLC](https://OutputWebsites.com)**
+
+**Some rights reserved.**
+
+Use of [the code for the Output Template](https://github.com/outputwebsites/template) is licensed under the [MIT License](https://mit.edu/~amini/LICENSE.md). Use of [the code for Intermediate Astro Decap CMS](https://github.com/CodeStitchOfficial/Intermediate-Astro-Decap-CMS) is licensed under the [Creative Commons Zero v1.0 Universal license](https://creativecommons.org/publicdomain/zero/1.0).
+
+This kit is forked from [Intermediate Astro Decap CMS](https://github.com/CodeStitchOfficial/Intermediate-Astro-Decap-CMS) which is forked from [CodeStitch Intermediate-Website-Kit-LESS](https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-LESS).
+
+---
+
   <h3 align="center">Intermediate Astro kit - Decap CMS</h3>
 
   <p align="center">
@@ -13,35 +45,46 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Getting Started](#gettingStarted)
-- [Prerequisites](#prerequisites)
-- [Features](#features)
-- [Project Structure](#projectStructure)
-  - [Project Tree](#projectTree)
-  - [Root Files and Folders](#rootFilesAndFolders)
-- [Expanding the Project](#expandingTheProject)
-  - [Reusing Code](#reusingCode)
-  - [Scripts and Event Handling](#scripts)
-  - [Adding More Pages](#addingMorePages)
-  - [Navigation via navData.json](#navigationViaFrontMatter)
-  - [Built-in Astro components](#builtinastrocomponents)
-  - [Custom Picture component](#Custompicturecomponent)
-  - [Configuring the CMS](#configuringTheCms)
-  - [Styling Decap preview pane](#stylingdecappreview)
-  - [Astro Content Collections](#AstroContentCollections)
-  - [Preloading images](#preloadingimages)
-  - [Sitemap Configuration](#sitemapConfiguration)
-- [Deployment](#deployment)
-- [Acknowledgments](#acknowledgments)
-- [Conclusion](#conclusion)
+- [Output Template](#output-template)
+  - [Links](#links)
+  - [Copyright/License Information](#copyrightlicense-information)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Features](#features)
+  - [Project Structure](#project-structure)
+    - [Project Tree](#project-tree)
+    - [Root Files and Folders](#root-files-and-folders)
+  - [Expanding the Project](#expanding-the-project)
+    - [Reusing Code](#reusing-code)
+    - [Scripts and Event Handling](#scripts-and-event-handling)
+      - [Using `<script>` in Astro](#using-script-in-astro)
+      - [Using scripts with `<ViewTransitions />` enabled](#using-scripts-with-viewtransitions--enabled)
+    - [Adding More Pages](#adding-more-pages)
+    - [Navigation via navData.json](#navigation-via-navdatajson)
+    - [Built-in Astro components: `<Image />` and `<Picture />`](#built-in-astro-components-image--and-picture-)
+    - [Custompicturecomponent](#custompicturecomponent)
+    - [Configuring the CMS](#configuring-the-cms)
+    - [Styling the Decap preview pane](#styling-the-decap-preview-pane)
+      - [Adding local backend](#adding-local-backend)
+    - [Astro content collections](#astro-content-collections)
+    - [Preloading images](#preloading-images)
+  - [Sitemap Configuration](#sitemap-configuration)
+    - [Features](#features-1)
+    - [Configuration](#configuration)
+  - [Deployment](#deployment)
+    - [On decapbridge.com:](#on-decapbridgecom)
+    - [On your CS Decap kit:](#on-your-cs-decap-kit)
+  - [Acknowledgments](#acknowledgments)
+  - [Conclusion](#conclusion)
 
 <a name="overview"></a>
 
 ## Overview
 
-This intermediate kit includes a pre-configured <a href="https://www.astro.build">Astro</a> environment, which
-allows for repeated components, centralized data and greater room to scale as your clients grow. The kit runs the latest major Astro version, v5. On top of this, a blog has been provided through [Decap CMS](https://decapcms.org/) to allow your clients to manage their content on their own. This can easily be adapted to anything which requires changing content, such as menus, job listing boards, portfolios and much more.
+This intermediate kit includes a pre-configured <a href="https://astro.build">Astro</a> environment, which
+allows for repeated components, centralized data and greater room to scale as your clients grow. The kit runs the latest major Astro version, v5. On top of this, a blog has been provided through [Decap CMS](https://decapcms.org) to allow your clients to manage their content on their own. This can easily be adapted to anything which requires changing content, such as menus, job listing boards, portfolios and much more.
 
 An example website has also been provided, with easy substitution of website sections possible through the use of <a href="https://codestitch.app/">CodeStitch's
 vanilla component library</a>. This kit aims to get any project off the ground in as little time as possible, with deployment being possible in as little as two minutes. We recommend Netlify as a host.
@@ -68,9 +111,9 @@ You can find all of CodeStitches `:root` variables, as well as .cs-topper, .cs-t
 
 Only the vanilla web technologies are _required_ before using this kit, with some familiarity with Astro and React-style Components and props also recommended, but not essential. A lot of the leg-work for the non-vanilla technologies has been done for you. If you would like to read up on some of these things, we recommend the following resources:
 
-1. [Astro's Documentation](https://docs.astro.build/en/getting-started/)
-2. [Astro Crash Course in 20 Minutes!](https://www.youtube.com/watch?v=zrPVTf761OI)
-3. [Decap CMS' docs](https://decapcms.org/docs/intro/) can also be found should you wish to extend the CMS beyond what's in this kit
+1. [Astro's Documentation](https://docs.astro.build/en/getting-started)
+2. [Astro Crash Course in 20 Minutes!](https://youtube.com/watch?v=zrPVTf761OI)
+3. [Decap CMS' docs](https://decapcms.org/docs/intro) can also be found should you wish to extend the CMS beyond what's in this kit
 
 <a name="features"></a>
 
@@ -83,16 +126,14 @@ Only the vanilla web technologies are _required_ before using this kit, with som
 - Astro's built-in components such as `<Picture />`, as demonstrated in `/src/components/Landing.astro` for example
 - Astro's content collections, leveraging image validation. This allows the use of Astro components on user-uploaded images via the CMS, automatically converting your images to modern `.webp` or `.avif` format.
 - Accessible dropdown menus on desktop navigation and nested pages
-- [CodeStitch](https://codestitch.app/) HTML and CSS blocks to build the UI.
+- [CodeStitch](https://codestitch.app) HTML and CSS blocks to build the UI.
 - Perfect Lighthouse scores
-
-![Lighthouse perfect score](public/assets/readme-images/100-score.png)
 
 This kit ships the following packages:
 
-- [Astro Icon](https://www.astroicon.dev/) - Astro Icon is a straightforward icon system for the Astro framework.
-- [Autoprefixer](https://www.npmjs.com/package/autoprefixer) - PostCSS plugin to parse CSS and add vendor prefixes to CSS rules using values from Can I Use. It is recommended by Google and used in Twitter and Alibaba.
-- [LESS](https://www.npmjs.com/package/less) - Less makes a few convenient additions to the CSS language, but you can also simply write standard CSS if you wish.
+- [Astro Icon](https://astroicon.dev) - Astro Icon is a straightforward icon system for the Astro framework.
+- [Autoprefixer](https://npmjs.com/package/autoprefixer) - PostCSS plugin to parse CSS and add vendor prefixes to CSS rules using values from Can I Use. It is recommended by Google and used in Twitter and Alibaba.
+- [LESS](https://npmjs.com/package/less) - Less makes a few convenient additions to the CSS language, but you can also simply write standard CSS if you wish.
 
 <a name="projectStructure"></a>
 
@@ -154,7 +195,7 @@ Astro leverages an opinionated folder layout for your project. Every Astro proje
 
 ### Root Files and Folders
 
-#### `public/*`
+**`public/*`**
 
 The `public/` directory is for files and assets in your project that do not need to be processed during Astro’s build process. The files in this folder will be copied into the build folder untouched, and then your site will be built.
 
@@ -166,11 +207,11 @@ This behavior makes `public/` ideal for common assets like images and fonts, or 
 
 You can place CSS and JavaScript in your public/ directory, but be aware that those files will not be bundled or optimized in your final build.
 
-##### `public/admin`
+**`public/admin`**
 
-This folder contains `config/yml`, which is where Decap CMS configuration options lives. [More information about options in Decap docs](https://decapcms.org/docs/configuration-options/)
+This folder contains `config/yml`, which is where Decap CMS configuration options lives. [More information about options in Decap docs](https://decapcms.org/docs/configuration-options)
 
-#### `src/*`
+**`src/*`**
 
 The `src/` folder is where most of your project source code lives. This includes:
 
@@ -183,21 +224,21 @@ The `src/` folder is where most of your project source code lives. This includes
 
 Astro processes, optimizes, and bundles your src/ files to create the final website that is shipped to the browser. Unlike the static public/ directory, your src/ files are built and handled for you by Astro.
 
-##### `src/assets`
+**`src/assets`**
 
 Contains all assets you want optimized by Astro (such as assets used in `<Picture />` components for example) must be placed in `src`.
 
-`public/assets/images/blog` is where the images uploaded on the CMS will be stored.
+`public/assets/images/content` is where the images uploaded on the CMS will be stored.
 
-##### `src/components`
+**`src/components`**
 
 Components are reusable units of code for your HTML pages. These could be Astro components, or UI framework components like React or Vue. It is common to group and organize all of your project components together in this folder.
 
-##### `src/content`
+**`src/content`**
 
 The src/content/ directory is reserved to store content collections organised in folders (e.g. `src/content/blog`) containing `.md` files, and an optional `config.ts` collections configuration file. No other files are allowed inside this folder.
 
-##### `src/data`
+**`src/data`**
 
 This directory contains data files that are accessible within any template throughout the project.
 
@@ -205,43 +246,43 @@ This directory contains data files that are accessible within any template throu
 
 - `navData.json` holds data to create the navigation of your site. See more information in the [navigation via navData.json section](#navigationViaFrontMatter)
 
-##### `src/icons`
+**`src/icons`**
 
 SVGs used by the <Icon /> component **must** be placed in this folder.
 
-##### `src/layouts`
+**`src/layouts`**
 
 Layouts are Astro components that define the UI structure shared by one or more pages. The `BaseLayout.astro` file acts as a giant wrapper for each individual page, where the content is injected through the `<slot /> `component.
 
-##### `src/js`
+**`src/js`**
 
 Contains helper functions.
 
-##### `src/pages`
+**`src/pages`**
 
 Pages are a special kind of component used to create new pages on your site. A page can be an Astro component, or a Markdown file that represents some page of content for your site.
 
-##### `src/styles`
+**`src/styles`**
 
 It is a common convention to store your CSS, Less or Sass files in a `src/styles` directory.
 
-#### `package.json` and `package-lock.json`
+**`package.json` and `package-lock.json`**
 
 The project's manifest. Standard NodeJS package files, containing the dependencies needed for the project to work.
 
-#### `node_modules/*`
+**`node_modules/*`**
 
 Created after you run `npm install`. This directory contains the code for all the dependencies that power this kit. It comes as standard with any NodeJS-powered project, much like the `package.json` and `package-lock.json` files. You can safely ignore this directory in your day-to-day work.
 
-#### `dist/`
+**`dist/`**
 
 Created after running `npm build`. This will hold the final build of your site.
 
-#### `astro.config.mjs`
+**`astro.config.mjs`**
 
 An Astro configuration file. It's already set up for you, but you can extend it with integrations to use, build options, server options, and more.
 
-#### `tsconfig.json`
+**`tsconfig.json`**
 
 A TypeScript configuration file. Optional. Includes TypeScript configuration options for your Astro project. Some features (like npm package imports) aren’t fully supported in the editor without a tsconfig.json file.
 
@@ -549,7 +590,7 @@ In `public/admin/`, you'll find a `config.yml` file which contains the configura
 
 Blog content lives in `/src/content/blog` in the form of markdown files, with a front matter similar to that of the pages. MDX files can also be used if you want to include JSX components. The title, description, and tags are defined in the frontmatter of the markdown. The permalink will be the same as the file name.
 
-Files uploaded through the dashboard's media library will be stored in `src/assets/images/blog` so that they can be accessed and optimised by Astro components if you wish.
+Files uploaded through the dashboard's media library will be stored in `src/assets/images/content` so that they can be accessed and optimised by Astro components if you wish.
 
 You can access the blog via navigating to the `/admin` path on the deployed site and entering your decapbridge admin credentials. All blog content can be easily created, updated and deleted via this admin panel, and is the very system that your clients can use to manage their website without your involvement.
 
@@ -572,7 +613,7 @@ This template includes custom styles for the Decap CMS preview pane, so that blo
 **How to update or customize:**
 
 - Edit `public/admin/decap-preview-styles.css` and the preview pane script in `src/pages/admin.astro` to match your site's branding or layout changes.
-- Use Decap's documentation on [customizing the preview pane](https://decapcms.org/docs/customization/)
+- Use Decap's documentation on [customizing the preview pane](https://decapcms.org/docs/customization)
 
 **Notes**
 
@@ -613,7 +654,7 @@ Now, when `npm run dev` is run, a proxy server for the CMS is spun up on `localh
 
 ### Astro content collections
 
-In `/src/content`, you will see a `config.ts` file. This is where you can configure [Astro Content Collections](https://docs.astro.build/en/guides/content-collections/). This step is **not necessary** to run the blog with Decap CMS, but it will supercharge your Astro pages and content. Collections help to
+In `/src/content`, you will see a `config.ts` file. This is where you can configure [Astro Content Collections](https://docs.astro.build/en/guides/content-collections). This step is **not necessary** to run the blog with Decap CMS, but it will supercharge your Astro pages and content. Collections help to
 
 - organize your documents,
 - validate your frontmatter,
@@ -687,32 +728,26 @@ export default defineConfig({
 
 > Note: Make sure to replace `https://yourwebsite.com` with your actual site URL in `astro.config.mjs` and `robots.txt`.
 
-Fore more configuration options, read the [full Astro Sitemap documentation](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+Fore more configuration options, read the [full Astro Sitemap documentation](https://docs.astro.build/en/guides/integrations-guide/sitemap)
 
 <a name="deployment"></a>
 
 ## Deployment
 
 > [!IMPORTANT]
-> This kit now uses decapbridge.com for its authentication solution. If you still use Netlify Identity, please refer to [the Netlify Identity branch](https://github.com/CodeStitchOfficial/Intermediate-Astro-Decap-CMS/tree/deprecated---using-Netlify-Identity)
+> Ensure the astro.config.mjs, client.json, robots.txt and \_redirects have been filled out. 
 
-0. **Before** you deploy, ensure the astro.config.mjs, client.json, robots.txt, \_redirects have been filled out, and that any kit placeholders have been swapped out.
-
-> [!TIP]
-> If you are updating your kit from Netlify Identity to decapbridge.com:
->
-> 1. Login to your Netlify account
-> 2. Navigate to Projects/Your-Site
-> 3. Navigate to Project Configuration/Identity and delete the Netlify Identity instance. This will delete your users as well. They will have to be re-created in decapbridge later.
-> 4. In /src/pages/admin.astro, delete the Netlify Identity script
+1. Navigate to your Netlify Admin Panel, click _Add new site | Import an existing project_
+2. Follow the instructions to connect your GitHub repository to Netlify.
+3. Netlify will build and deploy the site.
+4. Make sure to connect a domain (or just use the provided `.netlify.app` domain).
+5. Also if you want to use Netlify Forms, connect those.
 
 ### On decapbridge.com:
 
-1. Make sure that your repo is on Github and your site is deployed (doesn’t have to be Netlify) before moving on to the next step.
-2. Navigate to https://decapbridge.com/ and create an account. It’s free.
-3. Navigate to the dashboard and Create New Site. You see this screen:
-
-![decapbridge.com dashboard](public/assets/readme-images/decapbridge-dashboard.png)
+1. Make sure that your repo is on Github and your site is deployed remotely (to Netlify or others like Cloudflare) before moving on to the next step.
+2. Navigate to [decapbridge.com](https://decapbridge.com) and create a free account.
+3. Navigate to the DecapBridge dashboard and Create New Site.
 
 Fill in the 3 input fields:
 
@@ -731,12 +766,9 @@ Fill in the 3 input fields:
   9. Set the “Permissions / Repository permissions” to **read-write access** for this repository's **Contents** and **Pull requests. (**This is needed by DecapCMS to read your markdown, and write new content via Pull Requests.)
   10. Click “Generate token.”, double check the permissions and click the Generate Token button
   11. **Make sure to copy your GitHub Personal Access Token now as you will not be able to see this again.**
-
-      ![The Permissions settings](public/assets/readme-images/github-permissions.png)
-
   12. Double check your permissions before generating the token. It must have read and write access to Contents and Pull Requests.
 
-- Decap CMS URL: provide the (deployed) URL of the Decap CMS dashboard. e.g [`https://testing-decapbridge.netlify.app/admin/#/`](https://testing-decapbridge.netlify.app/admin/#/)
+- Decap CMS URL: provide the (deployed) URL of the Decap CMS dashboard. e.g [`https://testing-decapbridge.netlify.app/admin/#/`](https://testing-decapbridge.netlify.app/admin/#)
 
 ### On your CS Decap kit:
 
@@ -753,12 +785,12 @@ backend:
 
   # Quickly see who did what (optional)
   commit_messages:
-    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}>
+    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}>
+    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}>
+    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}>
+    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}>
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}>
 
 # Better Decap + Bridge logo (optional)
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
@@ -777,7 +809,7 @@ site_url: https://testing-decapbridge.netlify.app
 The author would like to acknowledge:
 
 - [Cedar Studios](https://github.com/cedar-studios) - Their [Intermediate-Astro-Kit-LESS](https://github.com/cedar-studios/Intermediate-Astro-Kit-LESS/tree/master) is the base of this template, which aims to improve on a few issues such as a breaking update to Astro v.4 due to outdated `astro-netlify-cms` integration.
-- [CodeStitch](https://codestitch.app/) - Some of their free stitches were used in this template.
+- [CodeStitch](https://codestitch.app) - Some of their free stitches were used in this template.
 - [Decapbridge.com] - Powers the interactions between Decap and the Github repo. Visit [Decapbridge Discord](<(https://discord.com/channels/1257728522361901219/1257728681380417600)>) and their [open-sources repos](https://github.com/decapbridge) for more information and support.
 
 <a name="Conclusion"></a>

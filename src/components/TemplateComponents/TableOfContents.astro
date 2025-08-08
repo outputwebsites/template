@@ -18,25 +18,25 @@ const { headings, levels = 2 } = Astro.props as Props;
 const filteredHeadings = headings.filter((heading) => heading.depth <= levels);
 ---
 
-	<h3 class="blog-sidebar_widget-header">On this page</h3>
-	<ul class="cs-toc-list">
-		{
-			filteredHeadings.map((heading) => (
-				<li class={`cs-toc-item depth-${heading.depth}`}>
-					<a href={`#${heading.slug}`} class="cs-toc-link">
-						{heading.text}
-					</a>
-				</li>
-			))
-		}
-	</ul>
+<h3 class="blog-sidebar_widget-header">On this page</h3>
+<ul class="cs-toc-list">
+	{
+		filteredHeadings.map((heading) => (
+			<li class={`cs-toc-item depth-${heading.depth}`}>
+				<a href={`#${heading.slug}`} class="cs-toc-link">
+					{heading.text}
+				</a>
+			</li>
+		))
+	}
+</ul>
 
 <style lang="less">
 	.cs-toc-container {
 		border-radius: 0.5em;
 		border: 1px solid #ebebeb;
-        padding: 2.1875em 1.875em;
-        margin-bottom: 2rem;
+		padding: 2.1875em 1.875em;
+		margin-bottom: 2rem;
 	}
 
 	.cs-toc-list {
@@ -74,27 +74,26 @@ const filteredHeadings = headings.filter((heading) => heading.depth <= levels);
 		}
 	}
 
-    @media only screen and (min-width: 64rem) {
-        .cs-toc-container {
-            margin-bottom: 0;
-        }
-    }
+	@media only screen and (min-width: 64rem) {
+		.cs-toc-container {
+			margin-bottom: 0;
+		}
+	}
 
-    /* Dark Mode */
-    @media only screen and (min-width: 0em) {
-    body.dark-mode {
-
-        .cs-toc-link {
-            color: #f7f7f7;
-			&.cs-toc-current {
-				color: var(--primaryLight);
+	/* Dark Mode */
+	@media only screen and (min-width: 0em) {
+		body.dark-mode {
+			.cs-toc-link {
+				color: #f7f7f7;
+				&.cs-toc-current {
+					color: var(--primaryLight);
+				}
+				&:hover {
+					opacity: 0.8;
+				}
 			}
-			&:hover {
-				opacity: 0.8;
-			}
-        }
-    }
-}
+		}
+	}
 </style>
 
 <script>
@@ -111,13 +110,19 @@ const filteredHeadings = headings.filter((heading) => heading.depth <= levels);
 
 		const allSectionLinks = tocWrapper.querySelectorAll(".cs-toc-link");
 
-		entries.forEach((entry: { isIntersecting: any; target: { id: any; }; }) => {
-			if (entry.isIntersecting) {
-				allSectionLinks.forEach((link) => link.classList.remove("cs-toc-current"));
-				const targetLink = tocWrapper.querySelector(`a[href="#${entry.target.id}"].cs-toc-link`);
-				if (targetLink) targetLink.classList.add("cs-toc-current");
-			}
-		});
+		entries.forEach(
+			(entry: { isIntersecting: any; target: { id: any } }) => {
+				if (entry.isIntersecting) {
+					allSectionLinks.forEach((link) =>
+						link.classList.remove("cs-toc-current"),
+					);
+					const targetLink = tocWrapper.querySelector(
+						`a[href="#${entry.target.id}"].cs-toc-link`,
+					);
+					if (targetLink) targetLink.classList.add("cs-toc-current");
+				}
+			},
+		);
 	}
 
 	function initTOC() {
@@ -129,7 +134,9 @@ const filteredHeadings = headings.filter((heading) => heading.depth <= levels);
 		if (!wrappingElement) return;
 
 		// Get all H1/H2/H3 tags from the post
-		allHeaderTags = wrappingElement.querySelectorAll(":scope > h1, :scope > h2, :scope > h3");
+		allHeaderTags = wrappingElement.querySelectorAll(
+			":scope > h1, :scope > h2, :scope > h3",
+		);
 		if (!allHeaderTags.length) return;
 
 		// Intersection Observer Options
@@ -164,4 +171,3 @@ const filteredHeadings = headings.filter((heading) => heading.depth <= levels);
 		}
 	});
 </script>
-
